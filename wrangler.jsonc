@@ -3,7 +3,6 @@
   "name": "manish-portfolio",
   "compatibility_date": "2026-10-17",
   "assets": {
-    "directory": "./",
-    "not_found_handling": "404-page"
+    "directory": "./public"
   }
 }
