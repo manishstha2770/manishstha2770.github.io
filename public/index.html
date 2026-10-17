@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manish Shrestha | Cloud Security, Cybersecurity Operations, AWS, Azure and AI Security Automation">
+  <title>Manish Shrestha | Cybersecurity Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #080e18;
+      --surface: #101b2b;
+      --surface2: #142437;
+      --accent: #00e5a0;
+      --text: #eaf2fa;
+      --muted: #9db0c4;
+      --border: #26394e;
+      --soft: #173c38;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 14, 24, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+      background:
+        radial-gradient(
+          circle at 85% 35%,
+          #123d39 0%,
+          transparent 45%
+        ),
+        var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.85fr);
+      align-items: center;
+      gap: 60px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .hero h1 {
+      font-size: clamp(54px, 7vw, 100px);
+      line-height: 1.05;
+      letter-spacing: -4px;
+      margin: 18px 0;
+    }
+
+    .hero h2 {
+      font-size: clamp(20px, 2.6vw, 28px);
+      font-weight: 500;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .hero-description {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 630px;
+      margin-top: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #061710;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: 1px solid var(--accent);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #55ffc0;
+      color: #061710;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--soft);
+      color: var(--accent);
+    }
+
+    .location {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 35px;
+    }
+
+    /* PROFILE PHOTO */
+
+    .photo-wrapper {
+      position: relative;
+      max-width: 390px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .photo-frame {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 22px;
+      background: var(--surface);
+      border: 2px solid #285a51;
+      box-shadow:
+        0 25px 75px rgba(0, 0, 0, 0.5),
+        0 0 45px rgba(0, 229, 160, 0.08);
+    }
+
+    .photo-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .photo-wrapper::after {
+      content: "";
+      position: absolute;
+      width: 75%;
+      height: 75%;
+      border: 2px solid var(--accent);
+      border-radius: 22px;
+      right: -15px;
+      bottom: -15px;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .photo-caption {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 95px 0;
+      border-bottom: 1px solid var(--border);
+      scroll-margin-top: 85px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.2;
+      letter-spacing: -2px;
+      margin: 12px 0 25px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 750px;
+      margin-bottom: 35px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    .focus-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .focus-box h3 {
+      margin-top: 0;
+    }
+
+    .focus-box ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .focus-box li {
+      margin: 10px 0;
+    }
+
+    /* CARDS */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 27px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .card h3 {
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 12px 0;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card-icon {
+      font-size: 29px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--accent);
+      padding: 5px 11px;
+      border-radius: 25px;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 5px 5px 0 0;
+    }
+
+    /* CERTIFICATIONS */
+
+    .cert-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 255px;
+    }
+
+    .cert-card p {
+      flex: 1;
+    }
+
+    .cert-card .tag {
+      align-self: flex-start;
+      margin-top: 15px;
+    }
+
+    .issuer {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 22px;
+    }
+
+    /* PROJECTS */
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card .project-tags {
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    /* EDUCATION */
+
+    .timeline {
+      border-left: 2px solid var(--border);
+      padding-left: 25px;
+      margin-top: 30px;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -31px;
+      top: 10px;
+      width: 11px;
+      height: 11px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: linear-gradient(
+        180deg,
+        var(--bg),
+        #0e242b
+      );
+    }
+
+    .contact .section-title {
+      max-width: 850px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .photo-wrapper {
+        max-width: 330px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      section {
+        padding: 70px 0;
+      }
+    }
+
+    @media (max-width: 570px) {
+      .navbar {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        letter-spacing: -3px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-wrapper {
+        max-width: 290px;
+      }
+
+      .photo-wrapper::after {
+        right: -8px;
+        bottom: -8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .card,
+      .btn {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <nav class="container navbar">
+      <a class="logo" href="#top">
+        Manish Shrestha<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO: NAME LEFT, PHOTO RIGHT -->
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <div class="eyebrow">
+            Cybersecurity Operations · Cloud Security
+          </div>
+
+          <h1>
+            Manish<br>Shrestha.
+          </h1>
+
+          <h2>
+            Aspiring Cloud Security Engineer &
+            Security Operations Analyst
+          </h2>
+
+          <p class="hero-description">
+            I explore how to secure AWS and Azure
+            environments, detect threats, investigate
+            incidents, and use AI to make security
+            operations faster and more effective.
+          </p>
+
+          <div class="buttons">
+            <a class="btn" href="#projects">
+              Explore Projects ↗
+            </a>
+
+            <a class="btn btn-outline" href="#contact">
+              Get in Touch →
+            </a>
+          </div>
+
+          <div class="location">
+            📍 St. Louis, Missouri, United States
+          </div>
+        </div>
+
+        <!-- YOUR ACTUAL PHOTO -->
+        <div class="photo-wrapper">
+          <div class="photo-frame">
+            <img
+              src="portfolio.jpeg"
+              alt="Portrait of Manish Shrestha"
+              loading="eager"
+              fetchpriority="high"
+            >
+          </div>
+
+          <div class="photo-caption">
+            CLOUD SECURITY · SOC · AI
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="container">
+
+        <div class="eyebrow">About Me</div>
+
+        <h2 class="section-title">
+          Building secure cloud systems.<br>
+          Thinking like a defender.
+        </h2>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm a cybersecurity student at Webster
+              University with interests in cloud security
+              engineering, security operations, identity
+              and access management, and AI-assisted
+              incident response.
+            </p>
+
+            <p>
+              My learning and project work focuses on
+              Microsoft Sentinel, Microsoft Entra ID,
+              Azure administration, AWS monitoring and
+              security services, and automation.
+            </p>
+
+            <p>
+              I enjoy turning complex security alerts
+              into clear, actionable investigations.
+              My goal is to build practical, resilient
+              security solutions that help teams detect
+              threats earlier and respond with confidence.
+            </p>
+          </div>
+
+          <aside class="focus-box">
+            <h3>Focus Areas</h3>
+            <ul>
+              <li>Security Operations & SIEM</li>
+              <li>Microsoft Azure Security</li>
+              <li>AWS Cloud Security</li>
+              <li>Identity & Access Management</li>
+              <li>AI-Powered Security Automation</li>
+              <li>Incident Triage & Threat Detection</li>
+            </ul>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+      <div class="container">
+
+        <div class="eyebrow">Expertise</div>
+
+        <h2 class="section-title">
+          Technologies I'm Working With
+        </h2>
+
+        <p class="section-intro">
+          Cloud platforms, security tools, and automation
+          technologies shaping my technical learning path.
+        </p>
+
+        <div class="grid">
+
+          <article class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>Security Operations</h3>
+            <p>
+              Microsoft Sentinel, SIEM, KQL,
+              alert investigation, incident response,
+              and MITRE ATT&CK.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">☁️</div>
+            <h3>Microsoft Azure</h3>
+            <p>
+              Azure VMs, Entra ID, RBAC,
+              Azure Monitor, Azure Policy,
+              networking and administration.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔐</div>
+            <h3>AWS Cloud Security</h3>
+            <p>
+              IAM, EC2, S3, CloudTrail,
+              CloudWatch, Security Hub,
+              logging and access controls.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🤖</div>
+            <h3>AI & Automation</h3>
+            <p>
+              AI-assisted triage, Python,
+              REST APIs, LLMs, and
+              security workflow automation.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔎</div>
+            <h3>Identity Security</h3>
+            <p>
+              Least privilege, MFA,
+              conditional access,
+              identity governance and Zero Trust.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">💻</div>
+            <h3>Tools & Technologies</h3>
+            <p>
+              GitHub, Linux, PowerShell,
+              Azure CLI, AWS CLI,
+              VS Code and scripting.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+
+    <section id="certifications">
+      <div class="container">
+
+        <div class="eyebrow">
+          Credentials & Learning Roadmap
+        </div>
+
+        <h2 class="section-title">
+          Cloud Security Certifications
+        </h2>
+
+        <p class="section-intro">
+          My Microsoft Azure and AWS certification
+          roadmap. Certification statuses will be
+          updated as credentials are earned.
+        </p>
+
+        <div class="grid">
+
+          <article class="card cert-card">
+            <div class="eyebrow">
+              Microsoft · AZ-104
+            </div>
+
+            <h3>Azure Administrator Associate</h3>
+
+            <div class="issuer">
+              Microsoft Certified
+            </div>
+
+            <p>
+              Azure identity, governance,
+              storage, compute and networking.
+            </p>
+
+            <span class="tag">
+              Status to confirm
+            </span>
+          </article>
+
+          <article class="card cert-card">
+            <div class="eyebrow">
+              Microsoft · AZ-500
+            </div>
+
+            <h3>Azure Security Engineer Associate</h3>
+
+            <div class="issuer">
+              Microsoft Certified
+            </div>
+
+            <p>
+              Azure identity, platform security,
+              and threat protection.
+            </p>
+
+            <span class="tag">
+              Status to confirm
+            </span>
+          </article>
+
+          <article class="card cert-card">
+            <div class="eyebrow">
+              Microsoft · SC-100
+            </div>
+
+            <h3>Cybersecurity Architect Expert</h3>
+
+            <div class="issuer">
+              Microsoft Certified
+            </div>
+
+            <p>
+              Enterprise security strategy,
+              architecture and Zero Trust.
+            </p>
+
+            <span class="tag">
+              Status to confirm
+            </span>
+          </article>
+
+          <article class="card cert-card">
+            <div class="eyebrow">
+              AWS · SOA-C03
+            </div>
+
+            <h3>CloudOps Engineer – Associate</h3>
+
+            <div class="issuer">
+              Amazon Web Services
+            </div>
+
+            <p>
+              Cloud operations, observability,
+              deployment and reliability.
+            </p>
+
+            <span class="tag">
+              Status to confirm
+            </span>
+          </article>
+
+          <article class="card cert-card">
+            <div class="eyebrow">
+              AWS · SCS-C02
+            </div>
+
+            <h3>Security – Specialty</h3>
+
+            <div class="issuer">
+              Amazon Web Services
+            </div>
+
+            <p>
+              Threat detection, infrastructure
+              protection, IAM and incident response.
+            </p>
+
+            <span class="tag">
+              Status to confirm
+            </span>
+          </article>
+
+        </div>
+
+        <p class="small">
+          Once certifications are earned, update
+          their status and add credential verification links.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+      <div class="container">
+
+        <div class="eyebrow">Selected Work</div>
+
+        <h2 class="section-title">
+          Projects & Research Interests
+        </h2>
+
+        <p class="section-intro">
+          Project concepts and technical areas
+          I'm exploring. Repository links can be
+          added as implementations are completed.
+        </p>
+
+        <div class="grid">
+
+          <article class="card project-card">
+            <div class="eyebrow">AI · SOC</div>
+
+            <h3>
+              AI-Assisted Sentinel Incident Triage
+            </h3>
+
+            <p>
+              Designing a workflow to enrich
+              Microsoft Sentinel incidents,
+              summarize evidence, and suggest
+              investigation steps using AI.
+            </p>
+
+            <div class="project-tags">
+              <span class="tag">Microsoft Sentinel</span>
+              <span class="tag">Python</span>
+              <span class="tag">AI</span>
+              <span class="tag">KQL</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="eyebrow">AWS · Detection</div>
+
+            <h3>AWS Security Monitoring Lab</h3>
+
+            <p>
+              Exploring CloudTrail, CloudWatch,
+              and IAM events to identify
+              suspicious activity in AWS environments.
+            </p>
+
+            <div class="project-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">CloudTrail</span>
+              <span class="tag">CloudWatch</span>
+              <span class="tag">IAM</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="eyebrow">Azure · Identity</div>
+
+            <h3>
+              Azure Identity & Access Security
+            </h3>
+
+            <p>
+              Exploring Microsoft Entra ID,
+              Azure RBAC and least-privilege
+              access configurations for
+              secure cloud administration.
+            </p>
+
+            <div class="project-tags">
+              <span class="tag">Azure</span>
+              <span class="tag">Entra ID</span>
+              <span class="tag">RBAC</span>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="eyebrow">Research · Trust</div>
+
+            <h3>
+              Blockchain-Based Threat
+              Intelligence Sharing
+            </h3>
+
+            <p>
+              Research interest in tamper-evident
+              threat intelligence sharing and
+              trust models across organizations.
+            </p>
+
+            <div class="project-tags">
+              <span class="tag">Blockchain</span>
+              <span class="tag">Threat Intelligence</span>
+              <span class="tag">Cybersecurity</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+      <div class="container">
+
+        <div class="eyebrow">Education</div>
+
+        <h2 class="section-title">
+          Academic Foundation
+        </h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+
+            <div class="eyebrow">
+              St. Louis, Missouri
+            </div>
+
+            <h3>Webster University</h3>
+
+            <p>
+              Graduate Studies · Cybersecurity Operations
+            </p>
+
+            <p>
+              Security operations, information
+              security, cloud security,
+              and risk management.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="eyebrow">
+          Let's Connect
+        </div>
+
+        <h2 class="section-title">
+          Interested in building safer
+          cloud environments together?
+        </h2>
+
+        <p class="section-intro">
+          I'm interested in opportunities and
+          collaborations involving cloud security,
+          SOC engineering, security automation,
+          and AI-powered incident investigation.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            class="btn"
+            href="https://github.com/manishstha2770"
+            target="_blank"
+            rel="noopener noreferrer">
+            View GitHub ↗
+          </a>
+
+          <a
+            class="btn btn-outline"
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+
+        </div>
+
+        <p class="small">
+          Replace the LinkedIn URL with your
+          personal LinkedIn profile.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-inner">
+
+      <span>
+        © <span id="year"></span>
+        Manish Shrestha. All rights reserved.
+      </span>
+
+      <a href="#top">
+        Back to top ↑
+      </a>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
